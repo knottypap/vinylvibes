@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vinyl Vibes Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Global styles */
+    body {
+      background-color: #F1EFE2; /* warm cream background */
+      font-family: Georgia, serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header and navigation */
+    header {
+      background-color: #E0C097; /* soft tan */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 1rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+      color: #42291B;
+      text-decoration: none;
+    }
+    a.btn, button.btn {
+      background-color: #E7A867; /* mustard/orange */
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    /* Album item styles */
+    .album-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+    .album {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      margin: 1rem;
+      padding: 1rem;
+      text-align: center;
+      width: 200px;
+    }
+    .album img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .album h2 {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    .album p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    .add-to-cart {
+      width: 100%;
+    }
+
+    /* Purchase form styles */
+    #purchase {
+      padding: 1rem 0;
+    }
+    #purchase h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    #purchase form {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+    }
+    #purchase h3 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #42291B;
+    }
+    .cart-summary, .shipping-info, .payment-method {
+      margin-bottom: 1rem;
+    }
+    .shipping-info label,
+    .payment-method label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+    .shipping-info input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-family: Georgia, serif;
+    }
+    .payment-method label {
+      font-weight: normal;
+      margin-right: 1rem;
+    }
+    .purchase-btn {
+      width: 100%;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .album {
+        width: 100%;
+        max-width: 300px;
+        margin: 1rem auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Button -->
+  <header>
+    <nav class="container">
+      <a href="#" class="logo">Vinyl Vibes</a>
+      <a href="#login" class="btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- Add to Cart -->
+  <main class="container">
+    <section class="album-list">
+      <div class="album">
+        <img src="https://via.placeholder.com/200" alt="Album cover placeholder">
+        <h2>Classic Album</h2>
+        <p>$19.99</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+      <div class="album">
+        <img src="https://via.placeholder.com/200" alt="Album cover placeholder">
+        <h2>Greatest Hits</h2>
+        <p>$24.99</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+    </section>
+
+    <!-- Purchase Screen -->
+    <section id="purchase">
+      <h2>Checkout</h2>
+      <form>
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+          <p>Classic Album &times; 1 – $19.99</p>
+          <p>Greatest Hits &times; 1 – $24.99</p>
+          <p><strong>Total: $44.98</strong></p>
+        </div>
+
+        <div class="shipping-info">
+          <h3>Shipping Information</h3>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" placeholder="123 Main St" required>
+
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" placeholder="Townsville" required>
+
+          <label for="zip">ZIP Code:</label>
+          <input type="text" id="zip" name="zip" placeholder="12345" required>
+
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" placeholder="Country Name" required>
+        </div>
+
+        <div class="payment-method">
+          <h3>Payment Method</h3>
+          <label><input type="radio" name="payment" value="card" checked> Credit Card</label>
+          <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+        </div>
+
+        <button type="submit" class="btn purchase-btn">Purchase</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
