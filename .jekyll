@@ -1,0 +1,31 @@
+# _config.yml
+
+title: vinylvibes.hshub.net
+description: Empowering wellness with health tips, nutrition advice, and lifestyle insights.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.vinylvibes.hshub.net" # the base hostname & protocol
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Social links (for SEO and Open Graph)
+author:
+  name: D Wilson
+  email: menstone1.com@gmail.com
+  twitter: myhealthmatters
+
+# Custom settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "D Wilson"
