@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart | Vinyl Vibes</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .checkout { margin-top: 20px; }
+  </style>
+</head>
+<body onload="showCart()">
+
+  <h1>Your Cart</h1>
+  <ul id="cartItems"></ul>
+  <h3 id="cartTotal"></h3>
+
+  <div class="checkout">
+    <h2>Checkout</h2>
+    <form onsubmit="processPayment(event)">
+      <label>
+        Name on Card:<br>
+        <input type="text" required><br><br>
+      </label>
+      <label>
+        Card Number:<br>
+        <input type="text" required><br><br>
+      </label>
+      <label>
+        Expiry Date:<br>
+        <input type="text" required><br><br>
+      </label>
+      <label>
+        CVV:<br>
+        <input type="text" required><br><br>
+      </label>
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+
+  <script>
+    // Include the same JavaScript functions here
+    let cart = [];
+
+    function showCart() {
+      const cartContainer = document.getElementById("cartItems");
+      const storedCart = JSON.parse(localStorage.getItem('vinylCart')) || [];
+      cartContainer.innerHTML = "";
+      let total = 0;
+
+      storedCart.forEach((item) => {
+        total += item.price;
+        cartContainer.innerHTML += `
+          <li>${item.name} - $${item.price.toFixed(2)}</li>
+        `;
+      });
+
+      document.getElementById("cartTotal").innerText = `Total: $${total.toFixed(2)}`;
+    }
+
+    function processPayment(event) {
+      event.preventDefault();
+      alert("Payment processed successfully!");
+      localStorage.removeItem('vinylCart');
+      window.location.href = "index.html";
+    }
+  </script>
+
+  
+<script>
+  let cart = [];
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    alert(`${name} has been added to your cart.`);
+    localStorage.setItem('vinylCart', JSON.stringify(cart));
+  }
+
+  function showCart() {
+    const cartContainer = document.getElementById("cartItems");
+    const storedCart = JSON.parse(localStorage.getItem('vinylCart')) || [];
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    storedCart.forEach((item, index) => {
+      total += item.price;
+      cartContainer.innerHTML += `
+        <li>${item.name} - $${item.price.toFixed(2)}</li>
+      `;
+    });
+
+    document.getElementById("cartTotal").innerText = `Total: $${total.toFixed(2)}`;
+  }
+
+  function processPayment(event) {
+    event.preventDefault();
+    alert("Payment processed successfully!");
+    localStorage.removeItem('vinylCart');
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>

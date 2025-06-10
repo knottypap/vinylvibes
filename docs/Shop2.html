@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Vinyl Vibes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #1e3d59;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .search-container {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-container input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .search-container button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .search-container button:hover {
+      background-color: #444;
+    }
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover img {
+      transform: scale(1.1);
+    }
+    .product-card h3 {
+      margin: 15px 0 5px;
+    }
+    .product-card p {
+      margin: 0 0 15px;
+      color: #555;
+    }
+    .product-card button {
+      background: #1e3d59;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .product-card button:hover {
+      background: #444;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      max-width: 90%;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<nav style="text-align:center; margin: 20px 0;">
+  <a href="Shop.html" style="margin:0 10px; text-decoration:underline; color:#1e3d59;">Shop Page 1</a> |
+  <a href="Shop2.html" style="margin:0 10px; text-decoration:underline; color:#1e3d59;">Shop Page 2</a>
+</nav>
+
+  <header>
+    <h1>Welcome to Vinyl Vibes</h1>
+    <p>Timeless Classics from the 1930s to Today</p>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search records...">
+    <button onclick="searchRecords()">Search</button>
+  </div>
+  <main>
+    <div class="product-grid" id="productGrid">
+      <div class="product-card">
+       <img src="images/IMG_0387(1).JPEG" alt="Beatles Compilation 2" onclick="openModal(this.src)">   
+       <h3>Beatles</h3>
+        <p>$25.99</p>
+        <button onclick="addToCart('Donna Allen Davis-Joy and Pain', 25.99)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0348.JPEG" alt="Tighten Up" onclick="openModal(this.src)">
+        <h3>Trojan</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0734.JPEG" alt="Ella Fitzgerald and Duke Ellington" onclick="openModal(this.src)">
+        <h3>Ella Fitzgerald</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Big Concerto Movie Themes', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0348.JPEG" alt="Peggy Lee and George Shearing" onclick="openModal(this.src)">
+        <h3>Tighten Up Blood and Fire</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Peggy Lee and George Shearing', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0349.JPEG" alt="Soul Party" onclick="openModal(this.src)">
+       <h3>Quincy Jones</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Soul Party', 29.99)">Add to Cart</button>
+      </div>
+      <div class="product-card"> 
+        <img src="images/IMG_0350.JPEG" alt="Count Basie" onclick="openModal(this.src)">
+         <h3>Tony Scott</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Basie', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0352.JPEG" alt="The Best of Hank Crawford" onclick="openModal(this.src)">
+        <h3>The Best of Hank Crawford</h3>
+        <p>£26.00</p>
+        <button onclick="addToCart('Mambos and Cha Chachas', 26.00)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0354.JPEG" alt="City Limit Crew" onclick="openModal(this.src)">
+        <h3>City Limit Crew</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('City Limit Crew', 29.99)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0356.JPEG" alt="Coleman Hawkins" onclick="openModal(this.src)">
+        <h3>Coleman Hawkins</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Coleman Hawkins', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0404.JPEG" alt="Curtis Mayfield and Ice T" onclick="openModal(this.src)">
+        <h3>Curtis Mayfield and Ice T</h3>
+        <p>£26.00</p>
+        <button onclick="addToCart('Curtis Mayfield and Ice T', 26.00)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0285.JPEG" alt="Electro" onclick="openModal(this.src)">
+        <h3>Electro</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Aretha Franklin - Lady Soul', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0359.JPEG" alt="Adeva" onclick="openModal(this.src)">
+        <h3>Adeva</h3>
+        <p>£26.00</p>
+        <button onclick="addToCart('Adeva', 26.00)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0281.JPEG" alt="Ray Charles" onclick="openModal(this.src)">
+        <h3>Ray Charles</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Ray Charles', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0282.JPEG" alt="" onclick="openModal(this.src)">
+        <h3>Nat King Cole</h3>
+        <p>£26.00</p>
+        <button onclick="addToCart('Nat King Cole', 26.00)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0376.JPEG" alt="Ginger Bread Men" onclick="openModal(this.src)">
+        <h3>Ginger Bread Men</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Ginger Bread Men', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0427.JPEG" alt="Dangerous" onclick="openModal(this.src)">
+        <h3>Janet Kay</h3>
+        <p>£26.00</p>
+        <button onclick="addToCart('Janet Kay', 26.00)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0295.JPEG" alt="Will Downing" onclick="openModal(this.src)">
+        <h3>Will Downing</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Will Downing', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0296.JPEG" alt="Jazz In the House Mix" onclick="openModal(this.src)">
+        <h3>Jazz In the House Mix Will Downing</h3>
+        <p>£26.00</p>
+        <button onclick="addToCart('', 26.00)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0340.JPEG" alt="Diana ross and the Supremes" onclick="openModal(this.src)">
+        <h3>Diana Ross and the Supremes</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Adonis', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0303.JPEG" alt="Micah Paris" onclick="openModal(this.src)">
+        <h3>Micah Paris</h3>
+        <p>£22.50</p>
+        <button onclick="addToCart('Adonis', 22.50)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0307.JPEG" alt="Lisa Stansfield" onclick="openModal(this.src)">
+        <h3>Lisa Stansfield</h3>
+        <p>£26.00</p>
+        <button onclick="addToCart('', 26.00)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/IMG_0305.JPEG" alt="Off Shore" onclick="openModal(this.src)">
+        <h3>Off Shore</h3>
+        <p>£22.50</p>
+         <button onclick="addToCart('', 26.00)">Add to Cart</button>
+  </div>
+      <div class="product-card">
+    <img src="images/IMG_0306.JPEG" alt="Deluxe" onclick="openModal(this.src)">
+        <h3>Deluxe</h3>
+        <p>£22.50</p> <button onclick="addToCart('', 26.00)">Add to Cart</button>
+        </div> 
+        </div>
+        
+    </div>
+  </main>
+
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    function searchRecords() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".product-card");
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        if (title.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    function openModal(src) {
+      document.getElementById("imageModal").style.display = "block";
+      document.getElementById("modalImage").src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    function addToCart(name, price) {
+      alert(name + " added to cart - £" + price);
+      // Add your cart functionality here
+    }
+  </script>
+
+</body>
+</html>
