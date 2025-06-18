@@ -339,7 +339,9 @@
     function closeModal() {
       document.getElementById("imageModal").style.display = "none";
     }
-
+    }Get-ChildItem -Recurse | Rename-Item -NewName { $_.Name.ToLower() }
+    
+    {
     function addToCart(name, price) {
       alert(name + " added to cart - £" + price);
       // Add your cart functionality here
