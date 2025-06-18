@@ -218,6 +218,7 @@
         } else {
           card.style.display = "none";
         }
+        Get-ChildItem -Recurse | Rename-Item -NewName { $_.Name.ToLower() }
       });
     }
   </script>
