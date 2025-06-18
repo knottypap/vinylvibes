@@ -93,6 +93,34 @@
       background: #444;
     }
 
+   .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      width: 200px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 600px) {
+      .gallery-item {
+        width: 100%;
+      }
+    
     .modal {
       display: none;
       position: fixed;
