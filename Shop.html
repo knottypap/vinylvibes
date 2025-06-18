@@ -280,7 +280,8 @@
       document.getElementById("imageModal").style.display = "block";
       document.getElementById("modalImage").src = src;
     }
-
+       Get-ChildItem -Recurse | Rename-Item -NewName { $_.Name.ToLower() }
+    
     function closeModal() {
       document.getElementById("imageModal").style.display = "none";
     }
