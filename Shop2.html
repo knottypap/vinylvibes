@@ -150,6 +150,7 @@
 </head>
 <body>
 
+  
 <nav style="text-align:center; margin: 20px 0;">
   <a href="Shop.html" style="margin:0 10px; text-decoration:underline; color:#1e3d59;">Shop Page 1</a> |
   <a href="Shop2.html" style="margin:0 10px; text-decoration:underline; color:#1e3d59;">Shop Page 2</a>
@@ -325,7 +326,8 @@
           card.style.display = "block";
         } else {
           card.style.display = "none";
-        }
+        } get { 
+        Get-ChildItem -Recurse | Rename-Item -NewName { $_.Name.ToLower() }
       });
     }
 
