@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="mpcpy_Le3wlhNJ_ZT7FwP3EBxqSdwQCy86bTMoKiOsA" />
   <title>Home | Vinyl Vibes</title>
   <style>
     body {
@@ -94,34 +93,6 @@
       background: #444;
     }
 
-   .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .gallery-item {
-      width: 200px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.05);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-    }
-
-    @media (max-width: 600px) {
-      .gallery-item {
-        width: 100%;
-      }
-    
     .modal {
       display: none;
       position: fixed;
@@ -151,171 +122,269 @@
 </head>
 <body>
 
-  
-<nav style="text-align:center; margin: 20px 0;">
-  <a href="Shop.html" style="margin:0 10px; text-decoration:underline; color:#1e3d59;">Shop Page 1</a> |
-  <a href="Shop2.html" style="margin:0 10px; text-decoration:underline; color:#1e3d59;">Shop Page 2</a>
-</nav>
-
   <header>
     <h1>Welcome to Vinyl Vibes</h1>
     <p>Timeless Classics from the 1930s to Today</p>
   </header>
+<nav style="text-align:center; margin: 20px 0;">
+  <a href="Shop.html" style="margin:0 10px; text-decoration:underline; color:#1e3d59;">Shop Page 1</a> |
+  <a href="Shop2.html" style="margin:0 10px; text-decoration:underline; color:#1e3d59;">Shop Page 2</a>
+  </nav>
 
-  <div class="search-container">
+<div class="search-container">
     <input type="text" id="searchInput" placeholder="Search records...">
     <button onclick="searchRecords()">Search</button>
   </div>
+</div>
   <main>
     <div class="product-grid" id="productGrid">
+       
+  
+
+    
+
       <div class="product-card">
-       <img src="images/img_0387.jpeg" "alt="Beatles Compilation 2" onclick="openModal(this.src)">   
-       <h3>Beatles</h3>
-        <p>$25.99</p>
-        <button onclick="addToCart('Beatles', 25.99)">Add to Cart</button>
-      </div>
-          <div class="product-card">
-        <img src="images/img_0348.jpeg" alt="Tighten Up" onclick="openModal(this.src)">
-        <h3>Trojan</h3>
+        <img src="images/0286.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Donna Allen Davis-Joy and Pain</h3>
+          Joe Loss and His Orchestra</h3>
         <p>£29.99</p>
         <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
       </div>
+
+         
       <div class="product-card">
-        <img src="images/img_0734.jpeg" alt="Ella Fitzgerald and Duke Ellington" onclick="openModal(this.src)">
-        <h3>Ella Fitzgerald</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Ella Fitzgerald and Duke Ellington', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0348.jpeg" alt="Peggy Lee and George Shearing" onclick="openModal(this.src)">
-        <h3>Tighten Up Blood and Fire</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Peggy Lee and George Shearing', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0349.jpeg" alt="Soul Party" onclick="openModal(this.src)">
-       <h3>Quincy Jones</h3>
+        <img src="images/0412.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Tyree</h3>
+          
         <p>£29.99</p>
-        <button onclick="addToCart('Soul Party', 29.99)">Add to Cart</button>
-      </div>
-      <div class="product-card"> 
-        <img src="images/img_0350.jpeg" alt="Tony Scott" onclick="openModal(this.src)">
-         <h3>Tony Scott</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Scott', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0352.jpeg" alt="The Best of Hank Crawford" onclick="openModal(this.src)">
-        <h3>The Best of Hank Crawford</h3>
-        <p>£26.00</p>
-        <button onclick="addToCart('The Best of Hank Crawford', 26.00)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0354.jpeg" alt="City Limit Crew" onclick="openModal(this.src)">
-        <h3>City Limit Crew</h3>
-        <p>£29.99</p>
-        <button onclick="addToCart('City Limit Crew', 29.99)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0356.jpeg" alt="Coleman Hawkins" onclick="openModal(this.src)">
-        <h3>Coleman Hawkins</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Coleman Hawkins', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0404.jpeg" alt="Curtis Mayfield and Ice T" onclick="openModal(this.src)">
-        <h3>Curtis Mayfield and Ice T</h3>
-        <p>£26.00</p>
-        <button onclick="addToCart('Curtis Mayfield and Ice T', 26.00)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0285.jpeg" alt="Electro" onclick="openModal(this.src)">
-        <h3>Electro</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Electro', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0359.jpeg" alt="Adeva" onclick="openModal(this.src)">
-        <h3>Adeva</h3>
-        <p>£26.00</p>
-        <button onclick="addToCart('Adeva', 26.00)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0281.jpeg" alt="Ray Charles" onclick="openModal(this.src)">
-        <h3>Ray Charles</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Ray Charles', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0282.jpeg" alt="Nat King Cole" onclick="openModal(this.src)">
-        <h3>Nat King Cole</h3>
-        <p>£26.00</p>
-        <button onclick="addToCart('Nat King Cole', 26.00)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0376.jpeg" alt="Ginger Bread Men" onclick="openModal(this.src)">
-        <h3>Ginger Bread Men</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Ginger Bread Men', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0427.jpeg" alt="Dangerous" onclick="openModal(this.src)">
-        <h3>Janet Kay</h3>
-        <p>£26.00</p>
-        <button onclick="addToCart('Janet_Kay', 26.00)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0295.jpeg" alt="Will Downing" onclick="openModal(this.src)">
-        <h3>Will Downing</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Will Downing', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0296.jpeg" alt="Jazz In the House Mix" onclick="openModal(this.src)">
-        <h3>Jazz In the House Mix Will Downing</h3>
-        <p>£26.00</p>
-        <button onclick="addToCart('Jazz House Mix', 26.00)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0340.jpeg" alt="Diana_ross_and_the_Supremes" onclick="openModal(this.src)">
-        <h3>Diana Ross and the Supremes</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Diana Ross and the Supremes', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0303.jpeg" alt="Micah Paris" onclick="openModal(this.src)">
-        <h3>Micah Paris</h3>
-        <p>£22.50</p>
-        <button onclick="addToCart('Micah Paris', 22.50)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0307.jpeg" alt="Lisa Stansfield" onclick="openModal(this.src)">
-        <h3>Lisa Stansfield</h3>
-        <p>£26.00</p>
-        <button onclick="addToCart('Lisa Stansfield', 26.00)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="images/img_0305.jpeg" alt="Off Shore" onclick="openModal(this.src)">
-        <h3>Off Shore</h3>
-        <p>£22.50</p>
-         <button onclick="addToCart('Off Shore', 26.00)">Add to Cart</button>
-  </div>
-      <div class="product-card">
-    <img src="images/img_0306.jpeg" alt="Deluxe" onclick="openModal(this.src)">
-        <h3>Deluxe</h3>
-        <p>£22.50</p> <button onclick="addToCart('Deluxe', 26.00)">Add to Cart</button>
-        </div> 
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
         </div>
         
-    </div>
-  </main>
+          <div class="product-card">
+           <img src="images/0414.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)"> 
+           <h3>Street Beats Vol 1</h3>  
+                  <p>£29.99</p>
+                    <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+                   </div>
+  
+          <div class="product-card">
+        <img src="images/0415.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Mathis Collection</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
 
-  <div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
+      
+        <div class="product-card">
+        <img src="images/0416.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>FineYoung Canabils</h3>
+                <p>£129.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+ 
+ <div class="product-card">
+        <img src="images/0417.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Stone Love Feat Sanchez</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+ 
+ 
+ <div class="product-card">
+        <img src="images/0418.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Blackbox Total Mix</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+ 
+ 
+ <div class="product-card">
+        <img src="images/0420.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Soul Sensation</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+ 
+ <div class="product-card">
+        <img src="images/0421.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Electro 2</h3>
+             <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+ 
+         <div class="product-card">
+        <img src="images/0334(1).JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Donna Allen Davis-Joy .and Pain</h3>
+          Joe Loss and His Orchestra</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
 
-  <script>
+         <div class="product-card">
+        <img src="images/0423.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Give More Power to The People</h3>
+               <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+ <div class="product-card">
+        <img src="images/0424.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Freddie McGreggor</h3>
+          J        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0340.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Donna Allen Davis-Joy .and Pain</h3>
+          Joe Loss and His Orchestra</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0342.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Donna Allen Davis-Joy .and Pain</h3>
+          Joe Loss and His Orchestra</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0343.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Donna Allen Davis-Joy .and Pain</h3>
+          Joe Loss and His Orchestra</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+ <div class="product-card">
+        <img src="images/0344.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Donna Allen Davis-Joy .and Pain</h3>
+          Joe Loss and His Orchestra</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+        
+         <div class="product-card">
+        <img src="images/0348.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Donna Allen Davis-Joy .and Pain</h3>
+          Joe Loss and His Orchestra</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+ <div class="product-card">
+        <img src="images/0349.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Quincy Jones</h3>
+                 <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+ <div class="product-card">
+        <img src="images/0351.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Carousel</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0356.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>The Platters 33.3</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+ <div class="product-card">
+        <img src="images/0357.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Micah Paris and Will Downing</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+ <div class="product-card">
+        <img src="images/0359.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Chanel-File</h3>
+                 <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0360.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>The Way We Were
+                 <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0362.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>DBilly Preston</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0366.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Quincy Jones</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0367.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Donna Allen Davis-Joy .and Pain</h3>
+          Joe Loss and His Orchestra</h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0369.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Drifters</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+ <div class="product-card">
+        <img src="images/0375.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Coleman Hawkins</h3>
+               <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+         <div class="product-card">
+        <img src="images/0376.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Gingerbread Men</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+        </div>
+
+                       
+        <div class="product-card">
+        <img src="images/0379.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>The Midas Touch</h3>
+          </h3>
+        <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+       </div>
+
+       <div class="product-card">
+        <img src="images/0380.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Dial-I Gotcha - Joe Tex</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+         </div>
+
+         <div class="product-card">
+        <img src="images/Paul Robeson.JPEG.JPEG" alt="Donna Allen Davis-Joy and Pain" onclick="openModal(this.src)">
+        <h3>Dial-I Gotcha - Joe Tex</h3>
+                  <p>£29.99</p>
+        <button onclick="addToCart('Joe Loss and His Orchestra', 29.99)">Add to Cart</button>
+         </div>
+
+      </div>       
+       
+        
+        </main>
+    <script>
     function searchRecords() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const cards = document.querySelectorAll(".product-card");
@@ -325,9 +394,8 @@
           card.style.display = "block";
         } else {
           card.style.display = "none";
-        } get { 
-        Get-ChildItem -Recurse | Rename-Item -NewName { $_.Name.ToLower() }
-      });
+        }
+      };
     }
 
     function openModal(src) {
@@ -338,14 +406,13 @@
     function closeModal() {
       document.getElementById("imageModal").style.display = "none";
     }
-    }Get-ChildItem -Recurse | Rename-Item -NewName { $_.Name.ToLower() }
-    
-    {
+
     function addToCart(name, price) {
       alert(name + " added to cart - £" + price);
       // Add your cart functionality here
     }
   </script>
+<cbloxk.fsx/>
 
 </body>
 </html>
