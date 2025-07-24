@@ -1,4 +1,6 @@
-AuthType Basic
-AuthName "Restricted Area"
-AuthUserFile /home//.htpassevoraelsltd/pwd=klljk;ji890*he3pidkjl;ajkld
-Require valid-user
+<FilesMatch "\.(jpg|jpeg|png|gif)$">
+  AuthType Basic
+  AuthName "Images Restricted"
+  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeawjfkl/V-=0
+  Require valid-user
+</FilesMatch>
