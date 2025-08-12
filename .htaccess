@@ -1,6 +1,6 @@
 <FilesMatch "\.(jpg|jpeg|png|gif|JPEG?JPEG.JPEG)$">
   AuthType Basic
   AuthName "Images Restricted"
-  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeawjfkl/V-=0
+  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeawjfkl/V-=0hgglhjl
   Require valid-user
 </FilesMatch>
