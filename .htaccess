@@ -1,6 +1,31 @@
+# --- ALLOWLIST YOUR DOMAINS ---
+SetEnvIfNoCase Referer "^https?://(www\.)?hshub\.net" good_ref=1
+SetEnvIfNoCase Referer "^https?://(www\.)?myhealthmatters\.life" good_ref=1
+SetEnvIfNoCase Referer "^https?://(www\.)?dhgpro\.co\.uk" good_ref=1
+
+# --- BLOCK HOTLINKING TO STATIC ASSETS ---
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# If there is a Referer and it’s not one of ours, block images, css, js, pdf, mp4, etc.
+RewriteCond %{HTTP_REFERER} !^$ 
+RewriteCond %{ENV:good_ref} !1
+RewriteRule \.(?:jpe?g|png|gif|webp|svg|css|js|pdf|mp4|mov|m4v|zip)$ - [F,NC]
+</IfModule>
+
+# --- CLICKJACKING & MIME SNIFF ---
+Header always set X-Frame-Options "DENY"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+
+
+
+
+
 <FilesMatch "\.(jpg|jpeg|png|gif|JPEG?JPEG.JPEG)$">
   AuthType Basic
   AuthName "Images Restricted"
-  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeawjfkl/V-=0hgglhjl
+  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeawjfkl/V-=0hgglhjljklh89u-0
   Require valid-user
 </FilesMatch>
