@@ -2,6 +2,8 @@
 SetEnvIfNoCase Referer "^https?://(www\.)?hshub\.net" good_ref=1
 SetEnvIfNoCase Referer "^https?://(www\.)?myhealthmatters\.life" good_ref=1
 SetEnvIfNoCase Referer "^https?://(www\.)?dhgpro\.co\.uk" good_ref=1
+SetEnvIfNoCase Referer "^https?://(www\.)?healthuniverse\.hshub\.net" good_ref=1
+SetEnvIfNoCase Referer "^https?://(www\.)?vinylvibes\.hshub\.net" good_ref=1
 
 # --- BLOCK HOTLINKING TO STATIC ASSETS ---
 <IfModule mod_rewrite.c>
