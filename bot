@@ -1,0 +1,13 @@
+# Block common scraping / bot user agents
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (curl|wget|python|scrapy|httpclient|libwww) [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# Block abusive IPs / ranges
+<RequireAll>
+  Require all granted
+  Require not ip 45.133.1.0/24
+  Require not ip 185.220.100.0/22
+</RequireAll>
