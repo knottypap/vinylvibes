@@ -1,0 +1,78 @@
+<head>
+  <style>
+    /* Deep Funnel Attribution Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    .funnel-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .funnel-stage {
+      background: #fff;
+      border-left: 5px solid #4caf50;
+      margin-bottom: 20px;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .funnel-stage:hover {
+      transform: scale(1.02);
+      border-left-color: #2196f3;
+    }
+
+    .stage-header {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .stage-metrics {
+      font-size: 1em;
+      color: #555;
+      margin-top: 5px;
+    }
+
+    .conversion-rate {
+      font-weight: bold;
+      color: #009688;
+    }
+
+    .attribution-value {
+      font-size: 0.95em;
+      color: #9c27b0;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 1.5em;
+      margin: 10px 0;
+      color: #aaa;
+    }
+
+    .btn-report {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #2196f3;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn-report:hover {
+      background-color: #1976d2;
+    }
+  </style>
+</head>

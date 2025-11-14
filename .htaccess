@@ -2,8 +2,6 @@
 SetEnvIfNoCase Referer "^https?://(www\.)?hshub\.net" good_ref=1
 SetEnvIfNoCase Referer "^https?://(www\.)?myhealthmatters\.life" good_ref=1
 SetEnvIfNoCase Referer "^https?://(www\.)?dhgpro\.co\.uk" good_ref=1
-SetEnvIfNoCase Referer "^https?://(www\.)?healthuniverse\.hshub\.net" good_ref=1
-SetEnvIfNoCase Referer "^https?://(www\.)?vinylvibes\.hshub\.net" good_ref=1
 
 # --- BLOCK HOTLINKING TO STATIC ASSETS ---
 <IfModule mod_rewrite.c>
@@ -25,9 +23,10 @@ Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
 
 
-<FilesMatch "\.(jpg|jpeg|png|gif|JPEG?JPEG.JPEG)$">
+
+<FilesMatch "\.(jpg|jpeg|png|gif|JPEG?JPEG.JPEG).html$">
   AuthType Basic
   AuthName "Images Restricted"
-  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeawjfkl/V-=0hgglhjljklh89u-0
+  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeawjfkl/V-=0 ghljl
   Require valid-user
 </FilesMatch>

@@ -1,0 +1,36 @@
+<body>
+  <div class="funnel-container">
+    <div class="funnel-stage">
+      <div class="stage-header">Stage 1: Traffic Source</div>
+      <div class="stage-metrics">Visitors: 10,000 | <span class="conversion-rate">CTR: 4.2%</span></div>
+      <div class="attribution-value">Attributed Revenue: £2,000</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="funnel-stage">
+      <div class="stage-header">Stage 2: Landing Page</div>
+      <div class="stage-metrics">Engagement: 65% | <span class="conversion-rate">Bounce Rate: 35%</span></div>
+      <div class="attribution-value">Attributed Revenue: £1,500</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="funnel-stage">
+      <div class="stage-header">Stage 3: Offer Page</div>
+      <div class="stage-metrics">Clicks: 2,300 | <span class="conversion-rate">Conversion Rate: 5.1%</span></div>
+      <div class="attribution-value">Final Revenue: £900</div>
+    </div>
+
+    <a href="#" class="btn-report">Download Attribution Report</a>
+
+    {
+  "optimizeImages.app": "", // Name of the app to use for optimizating the images
+  "optimizeImages.appOptions": [], // An array of options to be passed to the app on execution. You can use the array item "[filepath]" as a placeholder for the filepath to the currently processed file
+  "optimizeImages.imageRegex": ".*\\.(png|gif|jpe?g)$", // Regex used for matching images. Requires double escaping
+  "optimizeImages.searchDepth": 10, // Maximum depth to look at when searching images
+  "optimizeImages.searchStartingPath": ".", // Path relative to the root where to start searching images
+  "optimizeImages.searchIgnoreFolders": [".git", ...] // Ignore these folders when searching images
+}
+  </div>
+
