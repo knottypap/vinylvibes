@@ -27,6 +27,7 @@ Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 <FilesMatch "\.(jpg|jpeg|png|gif|JPEG?JPEG.JPEG).html$">
   AuthType Basic
   AuthName "Images Restricted"
-  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeawjfkl/V-=0 ghljl
+  AuthUserFile /home/youruser/.htpasswd djakl;fjdi;oeajkiwjfkl/V-=0 ghljl
   Require valid-user
+
 </FilesMatch>
