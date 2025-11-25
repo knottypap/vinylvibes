@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /images/0229.jpeg.JPEG/
+Allow: /images/<img src="0229.jpeg.JPEG">/
 0230.JPEG.JPEG/
 0230.jpeg (2).JPEG/
 0231.JPEG.JPEG/
