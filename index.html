@@ -251,3 +251,352 @@
 <!----html.style-->
 
 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google-site-verification" content="mpcpy_Le3wlhNJ_ZT7FwP3EBxqSdwQCy86bTMoKiOsA" />
+  <title>Vinyl Vibes Record Shop</title>
+
+  <style>
+    :root {
+      --brand: #1e3d59;
+      --accent: #07b32d;
+      --card-border: #184216;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #111;
+    }
+
+    header {
+      background-color: var(--brand);
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav.main-nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      color: #e6e9eb;
+      text-decoration: none;
+      padding: 6px 8px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      color: #e6e9eb;
+      text-decoration: none;
+      padding: 6px 8px;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      z-index: 10;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 12px;
+      color: #1e1e1e;
+      text-decoration: none;
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .dropdown-content a:last-child { border-bottom: none; }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .search-container {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .search-container input {
+      padding: 8px;
+      border-radius: 4px 0 0 4px;
+      border: none;
+      min-width: 180px;
+    }
+
+    .search-container button {
+      padding: 8px 12px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    #introduction {
+      background: white;
+      padding: 28px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      margin-bottom: 20px;
+    }
+
+    .shop {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .item {
+      background-color: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 14px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .item img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto 12px;
+    }
+
+    .item h3 {
+      margin: 8px 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .item p {
+      margin: 4px 0;
+      color: #333;
+    }
+
+    .item button {
+      margin-top: 8px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer.footer {
+      background-color: var(--brand);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      background: rgba(0,0,0,0.85);
+      color: white;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-radius: 6px;
+      z-index: 1000;
+    }
+
+    .cookie-banner a { color: #7fffb2; text-decoration: underline; }
+
+    @media (min-width: 900px) {
+      .search-container { margin-top: 0; }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -- keep if you use analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMK7K3T29G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TMK7K3T29G');
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <h1 style="margin:0;">Vinyl Vibes</h1>
+        <small style="color:#dfe6e9;">Timeless Classics from the 1930s to Today</small>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="Shop.html">Shop</a>
+        <a href="Shop2.html">Shop 2</a>
+
+        <div class="dropdown" aria-haspopup="true">
+          <a class="dropdown-toggle" href="#">More ▾</a>
+          <div class="dropdown-content" role="menu" aria-label="More pages">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="Account.html">Signup / Log In</a>
+            <a href="ShoppingCart.html">Shopping Cart</a>
+          </div>
+        </div>
+
+        <div class="search-container" style="margin-left: 8px;">
+          <input type="text" id="searchInput" placeholder="Search records..." aria-label="Search records">
+          <button onclick="searchRecords()">Search</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="introduction">
+      <h2>Welcome to Vinyl Vibes</h2>
+      <p>
+        At Vinyl Vibes, we celebrate the rich, soulful legacy of vinyl records — a format that has stood the test of time.
+        Our journey starts in the 1930s, when the warm crackle of blues and jazz first captured the hearts of listeners.
+      </p>
+      <p>
+        From smoky juke joints to living rooms around the world, vinyl records brought music to life in a way no other medium could.
+        Today, Vinyl Vibes continues that tradition by curating timeless records for collectors and casual listeners alike.
+      </p>
+    </section>
+
+    <section class="shop" id="shop">
+      <!-- Make sure these image files exist in your repo at img/*. If not, update src paths. -->
+      <article class="item product-card" data-title="Best Of Hank Crawford">
+        <img src="img/0342.jpeg" alt="Best Of Hank Crawford album cover"
+             onerror="this.onerror=null;this.src='img/placeholder.png';">
+        <h3>Best Of Hank Crawford</h3>
+        <p>£19.99</p>
+        <p>Delivery: 3-5 Days</p>
+        <button onclick="addToCart('Best Of Hank Crawford', 19.99)">Add to Cart</button>
+      </article>
+
+      <article class="item product-card" data-title="My Fair Lady">
+        <img src="img/0230.jpeg" alt="My Fair Lady album cover"
+             onerror="this.onerror=null;this.src='img/placeholder.png';">
+        <h3>My Fair Lady</h3>
+        <p>£24.99</p>
+        <p>Delivery: 2-4 Days</p>
+        <button onclick="addToCart('My Fair Lady', 24.99)">Add to Cart</button>
+      </article>
+
+      <article class="item product-card" data-title="Tally Ho">
+        <img src="img/0306.jpeg" alt="Tally Ho album cover"
+             onerror="this.onerror=null;this.src='img/placeholder.png';">
+        <h3>Tally Ho</h3>
+        <p>£17.99</p>
+        <p>Delivery: 4-6 Days</p>
+        <button onclick="addToCart('Tally Ho', 17.99)">Add to Cart</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      <a href="privacy-policy.html" style="color:white">Privacy Policy</a> |
+      <a href="Terms-and-Conditions.html" style="color:white">Terms &amp; Conditions</a> |
+      <a href="Cookie-policy.html" style="color:white">Cookie Policy</a>
+    </p>
+    <p style="margin:6px 0;">&copy; 2025 Vinyl Vibes</p>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite">
+    <span>We use cookies to improve your experience. By using our site, you agree to our <a href="Cookie-policy.html">Cookie Policy</a></span>
+    <div style="display:flex; gap:8px;">
+      <button onclick="acceptCookies()" style="background:#4caf50; color:white; border:none; padding:8px 12px; border-radius:4px;">Accept</button>
+    </div>
+  </div>
+
+  <script>
+    // Simple search: hides cards that don't match the search input
+    function searchRecords() {
+      const input = document.getElementById("searchInput").value.trim().toLowerCase();
+      const cards = document.querySelectorAll(".product-card");
+      if (!input) {
+        cards.forEach(c => c.style.display = "block");
+        return;
+      }
+      cards.forEach(card => {
+        const title = card.dataset.title || card.querySelector('h3')?.textContent || '';
+        card.style.display = title.toLowerCase().includes(input) ? 'block' : 'none';
+      });
+    }
+
+    function addToCart(name, price) {
+      // placeholder: replace with real cart logic
+      alert(name + " added to cart (" + price.toFixed(2) + " GBP)");
+    }
+
+    function acceptCookies() {
+      document.getElementById('cookieBanner').style.display = 'none';
+      try { localStorage.setItem('vv_cookies_accepted', '1'); } catch(e) { /* ignore */ }
+    }
+
+    // If cookies previously accepted, hide banner
+    try {
+      if (localStorage.getItem('vv_cookies_accepted') === '1') {
+        document.getElementById('cookieBanner').style.display = 'none';
+      }
+    } catch(e) { /* ignore */ }
+  </script>
+</body>
+</html>
