@@ -1,0 +1,11 @@
+def ai_decision(inputs):
+    risk = (
+        inputs["net"] * 0.3 +
+        inputs["dns"] * 0.2 +
+        inputs["behavior"] * 0.2 +
+        inputs["auth"] * 0.2 +
+        inputs["file"] * 0.1
+    )
+
+    if risk >= 0.7:
+        trigger_lockdown()
